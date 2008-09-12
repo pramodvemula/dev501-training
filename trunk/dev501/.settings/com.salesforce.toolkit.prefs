@@ -1,0 +1,14 @@
+#Wed Sep 10 15:48:05 PDT 2008
+Apex_code=Finest
+Db=Finer
+eclipse.preferences.version=1
+endpointApiVersion=13.0
+endpointEnvironment=Sandbox
+endpointServer=test.salesforce.com
+httpsProtocol=true
+keependpoint=false
+loggingLevel=3
+metadataFormatVersion=13.0
+namespacePrefix=
+readTimeout=400
+username=admin@dev501.104.com.test
