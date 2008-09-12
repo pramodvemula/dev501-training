@@ -1,0 +1,28 @@
+<apex:page controller="CandidateSearchController">
+<!-- TODO: Add the page tag with the appropriate controller attribute -->
+
+    <!-- TODO: Add the top portion of the page to accept search data and have a Go button.  Look at the picture in the exercise guide for help.  You will need to look at the controller to figure out the custom action to be called.  You will also need to rerender the lower section of the page when the button is clicked. Include an action status to display "requesting..." while the page is being rerendered.  -->
+    <apex:form >
+        <apex:pageblock id="block" mode="edit">
+            <apex:pageBlockSection >
+                <apex:pageblockSectionItem >
+                <apex:outputLabel for="searchText">Search Text</apex:outputLabel>
+                    <apex:panelGroup >
+                        <apex:inputText id="searchText" value="{!searchText}"/>
+                        <apex:commandButton value="Go!" action="{!doSearch}" rerender="results" status="status"/>
+                    </apex:panelGroup>
+                </apex:pageblockSectionItem>
+            </apex:pageBlockSection>
+            <apex:actionStatus id="status" startText="Requesting ..."></apex:actionStatus>
+            <apex:pageBlockSection title="Results" id="results" columns="1">
+                <apex:pageBlockTable value="{!results}" var="cand" rendered="{!NOT(ISNULL(results))}">
+                    <apex:column value="{!cand.First_Name__c}"/>
+                    <apex:column value="{!cand.Last_Name__c}"/>
+                    <apex:column value="{!cand.Email__c}"/>
+                </apex:pageBlockTable>            
+            </apex:pageBlockSection>
+        </apex:pageblock>        
+    </apex:form>
+    <!-- TODO: Add the table for the lower portion of the page, including a column for the candidate first name, last name, and email.  Only display the table if the search result set is not null. -->
+
+</apex:page>
